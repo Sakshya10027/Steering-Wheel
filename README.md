@@ -11,7 +11,7 @@ A self-contained Python script that turns a standard webcam into a virtual steer
 
 <br />
 
-[Live Demo](#) · [Documentation](#overview) · [Report Bug](#) · [Request Feature](#)
+
 
 </div>
 
