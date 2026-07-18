@@ -2,7 +2,7 @@
 
 # Virtual Steering Wheel
 
-A self-contained Python script that turns a standard webcam into a virtual steering wheel and pedal system for PC racing games — no simulator hardware required.
+A self-contained Python script that turns a standard webcam into a virtual steering wheel and pedal system for PC racing games no simulator hardware required.
 
 ![Python](https://img.shields.io/badge/PYTHON-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OPENCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
@@ -42,7 +42,7 @@ PC racing game players who want a hands-free, hardware-free steering experience 
 ## Features
 
 - **Fist & Low-Light Friendly:** Uses full-body Pose tracking instead of Hand tracking, so it works even with closed fists or backlighting.
-- **Snappy Steering (Left/Right):** Calculates the angle between your wrists — tilt past an 8-degree threshold to steer.
+- **Snappy Steering (Left/Right):** Calculates the angle between your wrists tilt past an 8-degree threshold to steer.
 - **Intuitive Depth Throttle (Gas/Brake):** Push hands forward toward the camera to accelerate; pull them back toward your chest to brake.
 - **Dynamic HUD:** On-screen UI with a virtual steering bar, angle readout, and a real-time depth slider for calibration.
 - **Zero Input Lag:** Removes built-in safety delays in Python key injection for buttery-smooth, instantaneous game control.
@@ -97,7 +97,7 @@ virtual-steering-wheel/
 
 ## File Explanation
 
-- **`virtual_steering_wheel.py`**: The entire application — webcam capture loop, MediaPipe Pose tracking, steering angle and depth-ratio calculations, HUD rendering, and `pydirectinput` key injection all live in this single script.
+- **`virtual_steering_wheel.py`**: The entire application webcam capture loop, MediaPipe Pose tracking, steering angle and depth-ratio calculations, HUD rendering, and `pydirectinput` key injection all live in this single script.
 
 ---
 
@@ -153,7 +153,7 @@ sequenceDiagram
 **How to Play**
 1. Launch the script; ensure the camera can see your shoulders and wrists.
 2. Launch your racing game (Need for Speed, Forza, Assetto Corsa, Trackmania, etc.) with standard WASD controls.
-3. Click into the game window so it's focused — keystrokes are injected into the active window.
+3. Click into the game window so it's focused keystrokes are injected into the active window.
 4. Hold your hands up as if gripping an invisible wheel.
 5. Tilt hands left/right to steer; push forward to accelerate; pull back to brake.
 6. Press **`q`** on the camera window to exit safely.
@@ -175,7 +175,7 @@ sequenceDiagram
 ## How the Tech Works
 
 - **Steering:** Calculates the angle of the line connecting your left and right wrists relative to the horizontal axis using `numpy.arctan2`.
-- **Throttle/Braking:** Uses a robust 2D perspective ratio instead of noisy depth sensors — it measures wrist-to-wrist distance relative to shoulder-to-shoulder distance. Camera perspective causes this ratio to increase as hands move toward the lens, reliably triggering the gas input.
+- **Throttle/Braking:** Uses a robust 2D perspective ratio instead of noisy depth sensors it measures wrist-to-wrist distance relative to shoulder-to-shoulder distance. Camera perspective causes this ratio to increase as hands move toward the lens, reliably triggering the gas input.
 
 ---
 
@@ -189,7 +189,7 @@ sequenceDiagram
 
 ## Build Instructions
 
-*No build step required — this is a single interpreted Python script run directly with `python virtual_steering_wheel.py`.*
+*No build step required this is a single interpreted Python script run directly with `python virtual_steering_wheel.py`.*
 
 ---
 
@@ -236,7 +236,7 @@ sequenceDiagram
 ## Troubleshooting
 
 - **`ERROR: NO PERSON` / `ERROR: SHOW WRISTS`**: Sit far enough back that the webcam can see both your shoulders and your hands.
-- **Input isn't registering in the game**: Ensure the game window is actively selected/focused — `pydirectinput` sends global keystrokes at the hardware level to the active window.
+- **Input isn't registering in the game**: Ensure the game window is actively selected/focused `pydirectinput` sends global keystrokes at the hardware level to the active window.
 
 ---
 
